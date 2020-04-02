@@ -400,7 +400,7 @@ class Recipe extends Model
     private function convertToFractions($quantity)
     {
         $whole = floor($quantity);
-        $fraction = $quantity - $whole;
+        $fraction = strval($quantity - $whole); // VDT - this should be a string
         switch ($fraction) {
             case 0:
                 $fraction = "";
